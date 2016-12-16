@@ -11,14 +11,14 @@ module.exports = {
     lodash: ['lodash']
   },
   output: {
-    filename: 'js/[name].js',
+    filename: '[name].js',
     library: '[name]_[hash]',
-    path: path.join(__dirname, 'dist')
+    path: path.join(__dirname, 'dist/js')
   },
   plugins: [
     new webpack.DllPlugin({
       name: '[name]_[hash]',
-      path: path.join(__dirname, 'dist/dll/[name]-manifest.json')
+      path: path.join(__dirname, 'dist/dll/[name].json')
     })
   ]
 };
